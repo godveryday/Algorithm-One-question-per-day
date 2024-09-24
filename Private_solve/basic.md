@@ -367,4 +367,82 @@ print(list(map(lambda x: x+1, a)))
 
 # 예를들어서 sort라는 함수의 인자로  (어떤기준으로 sort할건지) lambda를 사용하는 경우 많음
 '''
+
+# day1 복습
+
+'''
+# 몫과 나머지 연산자 
+num1 = 17
+num2 = 10
+num3 = 5
+print(num1 % num2) # result 예상 : 7
+print(num2 % num3) # result 예상 : 0
+print(num3 % num1) # result 예상 : 5
+print(num2 // num3) # result 예상 : 2
+print(num1 // num2 % num3) # result 예상 : 1 --> 앞에서부터 처리하지 않을까? (O)
+print(num1 + num2 % num3) # result 예상 : 17 --> 나머지 연산부터 처리하지 않을까? (O)
+
+
+
+# 위 내용을 바탕으로 한 자연수 n의 약수 찾기
+N = int(input())
+for i in range(1, N+1):
+    if N % i == 0:
+        print("{}는 {}의 약수입니다.".format(i, N))
+
+
+
+
+# 위 내용을 바탕으로 한 솟수 찾기 --> 내 잘못된 습관 check --> c언어 특성으로 항상 이중for문으로 구현하려고함 // if문안에 조건문 생각하기 !
+ 
+# 내가 여기서 잘 못하는게 for문과 break 등 사용 시 어디서 분기되고 어디로 가는지?
+# --> break는 그 for문을 반복하지 않고 나감 , continue는 그 for문 continue만난 지점에서 다시 실행
+
+numbers = list(map(int, input("숫자를 입력하세요 : ").split()))  
+for i in numbers:
+    if any (i % x ==0 for x in range(2, i)):
+        print("{}는 솟수가 아닙니다".format(i))
+        continue
+    print("{}는 솟수입니다".format(i))
+
+# 이 코드는 근데 2보다 작은수를 판단하는 조건은 없음 --> 추가해야됌.
+
+
+
+# ========================================================================================================
+# 내장함수 복습
+# 1) .upper, .lower, .find, .count, len, .isalpha, ord (아스키넘버) , chr (아스키에 해당하는 문자)
+# 2) list 내장함수(Tuple에도 가능).append, .insert, .pop, .remove, .index, sum, max/min, rd.shuffle, .sort(inverse=True), .clear
+# 3) enumerate, all, any
+
+A = "hello world"
+print(A.upper())
+
+A = A.upper()      # --> 대입가능
+print(A)
+
+print(A.find('W')) # --> return값으로 공백포함했을때 0부터 시작하는 인덱스값 리턴함  
+print(A.find('w')) # --> return값으로 해당 문자 없을 때 -1 리턴함
+
+print(A.count('W'))
+print(A.count('w')) # --> return값으로 해당 문자 없으니까 count 0 리턴함
+
+print(len(A))
+print(A.isalpha()) # --> return : False // 공백 존재 시 False로 return함.
+
+B = "abcd"
+print(B.isalpha()) # return : True
+
+# print(ord(B))  --> TypeError : ord() expected a character // 위에 B가 대입되서 안됌
+# print(ord(c))  --> TypeError : c는 변수로 인식함. 'c'로 사용해야됌
+print(ord('b'))
+print(chr(97))  
+
+
+
+# 아스키코드 값 암기 : A ~ Z , 65 ~ 90
+#                     a ~ z , 97 ~ 122 
+#                     공백 , 32
+# 내가 잊어먹은 거 : input으로 받으면 무조건 문자열로 취급함.
+'''
 ```
