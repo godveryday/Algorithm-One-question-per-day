@@ -1,0 +1,22 @@
+# K번째 약수 : 5min
+
+
+```
+# 시간 기록 : 5min
+# 생각 기록 : 일단 map과 input으로 받고, 약수이면 list에 집어넣고, sort를 한뒤 출력
+# 문제 제목 : K번째 약수
+
+n, k = map(int, input().split())
+list = []
+
+for i in range(1, n+1):
+    if n%i == 0:
+        list.append(i)
+
+list.sort()
+if len(list)>k:
+    print(list[k-1])
+else:
+    print(-1)
+```
+
