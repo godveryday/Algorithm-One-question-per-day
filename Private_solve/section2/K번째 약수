@@ -2,10 +2,6 @@
 
 
 ```
-# 시간 기록 : 5min
-# 생각 기록 : 일단 map과 input으로 받고, 약수이면 list에 집어넣고, sort를 한뒤 출력
-# 문제 제목 : K번째 약수
-
 n, k = map(int, input().split())
 list = []
 
