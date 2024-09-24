@@ -1,1 +1,1 @@
-# BOJ
+# Algorithm: One question per day
