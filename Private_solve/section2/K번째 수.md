@@ -1,0 +1,37 @@
+# K번째 수  32min (너무 오래걸린듯?)
+
+
+```
+
+t = int(input())
+answer = []
+
+for i in range(t):
+    n, s, e, k = map(int, input().split())
+    
+    numbers = list(map(int, input().split()))      
+    numbers = numbers[s-1:e]
+    numbers.sort()
+    answer.append(numbers[k-1])    
+
+
+for i in range(t):
+    print("#{} {}".format(i+1, answer[i]))
+    
+```
+
+알게 된 점 : 
+
+list[:] list 슬라이싱은 새로운 list를 반환한다.
+
+list.sort() 리턴값은 None이다. 따라서 list = list.sort() 형식은 (X)
+
+map함수는 map객체를 리턴한다. 따라서 객체를 list로 사용하기위해서는 list(map(..))형식
+
+list는 메소드로 존재하므로 이름을 list로 하지 말자.
+
+list의 인덱싱은 0 부터 시작하는것을 까먹지 말자
+
+마지막 for문으로 print하는 거 format형식으로 
+
+
