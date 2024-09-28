@@ -244,6 +244,8 @@ print(a)
 
 print(a.index(5))   # 5의 index번호를 출력
 print(a)
+a.pop(a.index(5))   # 5의 index번호를 출력하고 그 index번호를 삭제 == a.remove(5)
+
 
 print(sum(a))
 print(max(a))
