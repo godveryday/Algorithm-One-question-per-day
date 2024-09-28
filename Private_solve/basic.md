@@ -273,14 +273,14 @@ print(a)
 
 '''
 a = [22, 12, 36, 53, 19]
-print(a[:3])
-print(a[1:4])
+print(a[:3])                  # result = [22, 12, 36]
+print(a[1:4])                 # result = [12, 36, 53]
 print(len(a))
 
 
 for x in enumerate(a):   # 튜플로 출력, Index, Value 둘다 출력함
     print(x)
-    print(x[0], x[1], sep=', ')
+    print(x[0], x[1], sep=', ')    # result = (0,22) <-- 튜플로 출력됌    
 print()
 
 
@@ -318,7 +318,7 @@ a=[0]*3
 print(a)
 
 # 2차원
-a=[[0]*3 for i in range(3)]
+a=[[0]*3 for i in range(3)]     # results = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 print(a)   # 3 by 3
 
 a[0][1] = 1
@@ -447,4 +447,55 @@ print(chr(97))
 #                     공백 , 32
 # 내가 잊어먹은 거 : input으로 받으면 무조건 문자열로 취급함.
 '''
+
+
+# 클래스 : 제품의 설계도
+# 객체, 인스턴스 : 설계도로 만든 제품
+# 속성 : 클래스안의 변수
+# 메서드 : 클래스안의 함수
+# 생성자 : 객체를 만들 때 실행되는 함수
+
+'''
+class 클래스이름 : 
+    def 메서드이름(self):
+        명령블록
+
+객체 = 클래스이름()
+객체.메서드()
+
+'''     
+
+class Monster:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    
+    def say(self):
+        print("나는 {}다".format(self.name))
+        print("나이는 {}임".format(self.age))
+        
+shark = Monster("상어", 20)
+shark.say()
+
+
+class JSS:
+    def __init__(self):
+        self.name = input("이름을 입력")
+        self.age = input("나이를 입력")
+    
+    def show(self):
+        print("나이 이름은 {}, 나이는 {}세입니다".format(self.name, self.age))
+        
+# J = JSS()
+# J.show()
+
+
+class JSS2(JSS):                  # JSS2에서 JSS를 상속 --> 뒤에super().__init__() 헤줘야함.
+    def __init__(self):
+        super().__init__()
+        self.gender = input("성별을 입력")
+        
+J2 = JSS2()
+J2.show()
+
 ```
