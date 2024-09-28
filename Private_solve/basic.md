@@ -236,7 +236,7 @@ print(a)
 a.pop()
 print(a)
 
-a.pop(3)
+a.pop(3)           # 3번 인덱스에 있는 값 pop
 print(a)
 
 a.remove(4)   # '4'를 삭제
