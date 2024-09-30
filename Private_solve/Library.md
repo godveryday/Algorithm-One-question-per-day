@@ -4,6 +4,12 @@
 
 ### sorted()
 
+sorted, sort 차이 : 
+
+sorted(arr) : arr 배열을 변형하지 않고, arr 배열이 오름차순으로 정렬된 새로운 배열을 반환한다.
+
+arr.sort() : arr 배열을 오름차순으로 변형하고 반환하지는 않는다.
+
 ```
 result = sorted([4,7,3,1])  # 오름 차순으로 정렬
 print(result) --> [1,3,4,7]
